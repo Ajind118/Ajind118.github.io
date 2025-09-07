@@ -290,26 +290,27 @@
         }
 
         .hero-image::before {
-        content: '';
-        position: absolute;
-        top: -10px;
-        left: -10px;
-        right: 10px;
-        bottom: 10px;
-        border: 2px solid var(--primary);
-        z-index: -1;
-        opacity: 0.5;
-    }
-      .hero-image img {
-        width: 100%;
-        border: 1px solid var(--primary);
-        transition: transform 0.5s ease;
-    }
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid var(--primary);
+            z-index: -1;
+            opacity: 0.5;
+        }
 
-      .hero-image:hover img {
-        transform: scale(2.8);
-        transition: transform 10s linear;
-    }
+        .hero-image img {
+            width: 100%;
+            border: 1px solid var(--primary);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.1);
+            transition: transform 5s linear;
+        }
 
         /* About Section */
         .about-content {
@@ -568,6 +569,27 @@
 
         .certification-link:hover {
             color: var(--secondary);
+        }
+
+        /* TryHackMe Badge Section */
+        .thm-badge {
+            text-align: center;
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(0, 255, 0, 0.03);
+            border: 1px solid rgba(0, 255, 0, 0.1);
+        }
+
+        .thm-badge h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        .thm-badge iframe {
+            border: none;
+            margin: 0 auto;
+            display: block;
         }
 
         /* Projects Section */
@@ -936,6 +958,12 @@
                         <p>Top 3% Global Rank</p>
                     </div>
                 </div>
+            </div>
+            
+            <!-- TryHackMe Badge -->
+            <div class="thm-badge">
+                <h3>My TryHackMe Profile</h3>
+                <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3449360" style='border:none;'></iframe>
             </div>
         </div>
     </section>
