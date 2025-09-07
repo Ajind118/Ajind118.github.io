@@ -286,6 +286,7 @@
         .hero-image {
             width: 35%;
             position: relative;
+            overflow: hidden;
         }
 
         .hero-image::before {
@@ -304,11 +305,13 @@
             width: 100%;
             border: 1px solid var(--primary);
             filter: grayscale(50%) contrast(120%);
-            transition: var(--transition);
+            transition: all 0.5s ease;
+            transform: scale(1);
         }
 
         .hero-image:hover img {
             filter: grayscale(0%) contrast(100%);
+            transform: scale(1.1);
         }
 
         /* About Section */
@@ -468,6 +471,106 @@
 
         .timeline-content p {
             color: var(--light);
+        }
+
+        /* Education Section */
+        .education-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .education-item {
+            background: rgba(0, 255, 0, 0.03);
+            border: 1px solid rgba(0, 255, 0, 0.1);
+            padding: 25px;
+            transition: var(--transition);
+        }
+
+        .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 255, 0, 0.1);
+        }
+
+        .education-item h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-family: 'Share Tech Mono', monospace;
+            border-bottom: 1px solid rgba(0, 255, 0, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .education-date {
+            color: var(--primary);
+            font-family: 'Share Tech Mono', monospace;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .education-item p {
+            color: var(--light);
+            margin-bottom: 10px;
+        }
+
+        /* Certifications Section */
+        .certifications-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .certification-item {
+            background: rgba(0, 255, 0, 0.03);
+            border: 1px solid rgba(0, 255, 0, 0.1);
+            padding: 25px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certification-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--primary);
+        }
+
+        .certification-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 255, 0, 0.1);
+        }
+
+        .certification-item h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        .certification-date {
+            color: var(--primary);
+            font-family: 'Share Tech Mono', monospace;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .certification-item p {
+            color: var(--light);
+            margin-bottom: 15px;
+        }
+
+        .certification-link {
+            display: inline-block;
+            color: var(--primary);
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .certification-link:hover {
+            color: var(--secondary);
         }
 
         /* Projects Section */
@@ -747,6 +850,11 @@
             .section-title h2 {
                 font-size: 30px;
             }
+
+            .education-container,
+            .certifications-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -764,6 +872,8 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -880,7 +990,7 @@
     <section class="section" id="experience">
         <div class="container">
             <div class="section-title">
-                <h2>Experience & Education</h2>
+                <h2>Experience</h2>
             </div>
             <div class="timeline">
                 <div class="timeline-item">
@@ -891,21 +1001,64 @@
                         <p>Solved 100+ hands-on labs including OWASP Top 10, Network Exploitation, Privilege Escalation. Demonstrated skills in offensive and defensive security using tools like Nmap, Burp Suite, Wireshark, Metasploit, and Hydra. Earned 20+ badges for completing real-world scenarios in Web, Cloud, and System security.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2022 - 2024</div>
-                    <div class="timeline-content">
-                        <h3>JECRC University</h3>
-                        <p>Master of Computer Applications in Cyber Security</p>
-                        <p>Specialized in Cybersecurity, Ethical Hacking, and Network Security. Completed hands-on lab work with tools like Wireshark, Metasploit, and Burgsuit.</p>
-                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section" id="education">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education</h2>
+            </div>
+            <div class="education-container">
+                <div class="education-item">
+                    <h3>JECRC University</h3>
+                    <div class="education-date">2022 - 2024</div>
+                    <p><strong>Master of Computer Applications in Cyber Security</strong></p>
+                    <p>Specialized in Cybersecurity, Ethical Hacking, and Network Security. Completed hands-on lab work with tools like Wireshark, Metasploit, and Burgsuit.</p>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2019 - 2022</div>
-                    <div class="timeline-content">
-                        <h3>MKBU University</h3>
-                        <p>Bachelor of Computer Applications (BCA)</p>
-                        <p>Gained foundational knowledge in Computer Science, Programming, and Networking. Found strong interest in cybersecurity during programming courses and self-learning.</p>
-                    </div>
+                <div class="education-item">
+                    <h3>MKBU University</h3>
+                    <div class="education-date">2019 - 2022</div>
+                    <p><strong>Bachelor of Computer Applications (BCA)</strong></p>
+                    <p>Gained foundational knowledge in Computer Science, Programming, and Networking. Found strong interest in cybersecurity during programming courses and self-learning.</p>
+                    <p>Final Year Project: "Cricket Scoreboard Management System" using Python.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="section" id="certifications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Certifications</h2>
+            </div>
+            <div class="certifications-container">
+                <div class="certification-item">
+                    <h3>Certified Ethical Hacker (CEH)</h3>
+                    <div class="certification-date">June 2025</div>
+                    <p>EC-Council's Certified Ethical Hacker certification validates skills in identifying vulnerabilities and weaknesses in target systems.</p>
+                    <a href="#" class="certification-link">View Certification <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="certification-item">
+                    <h3>Certified Network Defender</h3>
+                    <div class="certification-date">December 2024</div>
+                    <p>EC-Council's network security certification focused on protecting, detecting, and responding to network security threats.</p>
+                    <a href="#" class="certification-link">View Certification <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="certification-item">
+                    <h3>Ethical Hacker</h3>
+                    <div class="certification-date">November 2024</div>
+                    <p>Cisco's Ethical Hacking certification covering network security principles and ethical hacking techniques.</p>
+                    <a href="#" class="certification-link">View Certification <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="certification-item">
+                    <h3>Secure Storage Associate</h3>
+                    <div class="certification-date">September 2024</div>
+                    <p>OPSWAT Academy's certification focused on secure storage solutions and data protection methodologies.</p>
+                    <a href="#" class="certification-link">View Certification <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
         </div>
